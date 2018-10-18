@@ -13,7 +13,7 @@ module Api::V2
         instance_variable_get(:"@scap_content") || raise(message)
       end
 
-      api :GET, '/compliance/scap_contents', N_('List SCAP contents')
+      api :GET, '/compliance/scap_contents', N_('List SCAP content')
       param_group :search_and_pagination, ::Api::V2::BaseController
 
       def index

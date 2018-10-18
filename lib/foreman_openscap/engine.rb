@@ -134,15 +134,16 @@ module ForemanOpenscap
         menu :top_menu, :compliance_policies, :caption => N_('Policies'),
                                               :url_hash => { :controller => :policies, :action => :index },
                                               :parent => :hosts_menu
-        menu :top_menu, :compliance_contents, :caption => N_('SCAP contents'),
+        menu :top_menu, :compliance_contents, :caption => N_('SCAP Content'),
                                               :url_hash => { :controller => :scap_contents, :action => :index },
                                               :parent => :hosts_menu
-        menu :top_menu, :compliance_reports, :caption => N_('Reports'),
-                                             :url_hash => { :controller => :arf_reports, :action => :index },
-                                             :parent => :hosts_menu
         menu :top_menu, :compliance_files, :caption => N_('Tailoring Files'),
                                            :url_hash => { :controller => :tailoring_files, :action => :index },
                                            :parent => :hosts_menu
+        menu :top_menu, :compliance_reports, :caption => N_('Reports'),
+                                             :url_hash => { :controller => :arf_reports, :action => :index },
+                                             :parent => :monitor_menu
+                                             :after => :hostgroups
 
         # add dashboard widget
         widget 'compliance_host_reports_widget',
